@@ -4,6 +4,7 @@
 	width: 90%;
 	background-color: #F5F8FB;
 	padding: 5px;
+	font-family: sans-serif;
 
 	.titles{
 
@@ -28,19 +29,19 @@
 			padding: 10px;
 			margin: 5px 0;
 
-			&.rejected{
-				background-color: #EF5858;
-				border: 3px red solid;
+			&.rejected, &.failed{
+				background-color: #FBE4E4;
+				border: 3px #BA0004 solid;
 			}
 
 			&.running{
-				background-color: #D7D7FF;
-				border: 3px blue solid;
+				background-color: #F1F4FA;
+				border: 3px #4C85B7 solid;
 			}
 
-			&.accepted{
-				background-color: #66EA66;
-				border: 3px green solid;
+			&.accepted, &.complete{
+				background-color: #EEF3EC;
+				border: 3px #568E31 solid;
 			}
 
 			&.pending{
@@ -81,7 +82,6 @@
 
 			.details{
 				min-height: 50px;
-				background-color: antiquewhite;
 				width: 100%;
 				padding: 10px;
 

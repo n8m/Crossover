@@ -10,7 +10,7 @@
         <span>Unit Test</span>
         <span>Functional Test</span>
     </div>
-    <div class="item" ng-repeat="item in main.data" ng-class="{'running': item.state === 'Running', 'rejected': item.state === 'Rejected', 'accepted': item.state === 'Accepted', 'pending': item.state === 'Pending'}">
+    <div class="item" ng-repeat="item in main.data" ng-class="{'running': item.state === 'Running', 'rejected': item.state === 'Rejected', 'accepted': item.state === 'Accepted', 'pending': item.state === 'Pending', 'complete': item.state === 'Complete', 'failed': item.state === 'Failed'}">
       <div bs-collapse-toggle>
         <span class="glyphicon glyphicon-tasks" ng-show="item.type === 'firewall'"></span>
         <span class="glyphicon glyphicon-picture" ng-show="item.type === 'build'"></span>
@@ -42,6 +42,10 @@
         </div>
         <div class="info-panel" bs-popover trigger="hover">
           <p>Unit Test</p>
+          <div ng-show="item.unitTest">
+            <p>Passed: {{item.unitTest.passed}}</p>
+            <p>Failed: {{item.unitTest.failed}}</p>
+          </div>
         </div>
         <div class="info-panel" bs-popover trigger="hover">
           <p>Functional Test</p>
