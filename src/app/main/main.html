@@ -1,0 +1,56 @@
+<div class="data-container">
+  <div class="data-block" bs-collapse ng-model="idxOpenPanel">
+    <div class="titles">
+        <span>Changelist / Build</span>
+        <span>Owner</span>
+        <span>Time Started</span>
+        <span>State</span>
+        <span>Metrics</span>
+        <span>Build</span>
+        <span>Unit Test</span>
+        <span>Functional Test</span>
+    </div>
+    <div class="item" ng-repeat="item in main.data" ng-class="{'running': item.state === 'Running', 'rejected': item.state === 'Rejected', 'accepted': item.state === 'Accepted', 'pending': item.state === 'Pending'}">
+      <div bs-collapse-toggle>
+        <span class="glyphicon glyphicon-tasks" ng-show="item.type === 'firewall'"></span>
+        <span class="glyphicon glyphicon-picture" ng-show="item.type === 'build'"></span>
+        <span class="title">{{item.title}}</span>
+      </div>
+      <div>{{item.owner}}</div>
+      <div>{{item.timeStarted | date: 'short'}}</div>
+      <div>{{item.state}}</div>
+
+      <div ng-hide="idxOpenPanel === $index">
+        <div class="indicator" ng-class="{'success': item.metrics === 1, 'error': item.metrics === 0, 'pending': item.metrics === null}"></div>
+      </div>
+      <div ng-hide="idxOpenPanel === $index">
+        <div class="indicator" ng-class="{'success': item.build === 1, 'error': item.build === 0, 'pending': item.build === null}"></div>
+      </div>
+      <div ng-hide="idxOpenPanel === $index">
+        <div class="indicator" ng-class="{'success': item.unitTest, 'error': item.unitTest === 0, 'pending': item.unitTest === null}"></div>
+      </div>
+      <div ng-hide="idxOpenPanel === $index">
+        <div class="indicator" ng-class="{'success': item.funcTest, 'error': item.funcTest === 0, 'pending': item.funcTest === null}"></div>
+      </div>
+
+      <div class="details" bs-collapse-target>
+        <div class="info-panel" bs-popover trigger="hover">
+          <p>Metrics</p>
+        </div>
+        <div class="info-panel" bs-popover trigger="hover">
+          <p>Build</p>
+        </div>
+        <div class="info-panel" bs-popover trigger="hover">
+          <p>Unit Test</p>
+        </div>
+        <div class="info-panel" bs-popover trigger="hover">
+          <p>Functional Test</p>
+        </div>
+        <div class="total-panel">
+          <p>Result</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

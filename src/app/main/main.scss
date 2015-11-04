@@ -1,0 +1,120 @@
+.data-container{
+
+	margin: 10px auto;
+	width: 90%;
+	background-color: #F5F8FB;
+	padding: 5px;
+
+	.titles{
+
+		padding: 0 10px;
+
+		span{
+			width: 12%;
+			font-weight: bold;
+			display: inline-block;
+		}
+	}
+
+	.data-block{
+
+		.glyphicon{
+			font-size: 2em;
+			cursor: pointer;
+		}
+
+		.item{
+			border: 3px solid black;
+			padding: 10px;
+			margin: 5px 0;
+
+			&.rejected{
+				background-color: #EF5858;
+				border: 3px red solid;
+			}
+
+			&.running{
+				background-color: #D7D7FF;
+				border: 3px blue solid;
+			}
+
+			&.accepted{
+				background-color: #66EA66;
+				border: 3px green solid;
+			}
+
+			&.pending{
+				border: 3px #CBCBCD solid;
+				opacity: 0.8;
+			}
+
+			.title{
+				cursor: pointer;
+			}
+
+			div:not(.details){
+				display: inline-block;
+				width: 12%;
+				vertical-align: middle;
+
+				.indicator{
+					width: 50px;
+					height: 40px;
+					border: 2px solid #000;
+					background-color: #ccc;
+
+					&.error{
+						background-color: red;
+					}
+
+					&.success{
+						background-color: green;
+					}
+
+					&.pending{
+						background-color: blue;
+					}
+
+				}
+
+			}
+
+			.details{
+				min-height: 50px;
+				background-color: antiquewhite;
+				width: 100%;
+				padding: 10px;
+
+				.info-panel{
+					width: 19%;
+					border: 2px solid black;
+					height: 200px;
+					cursor: pointer;
+
+					p{
+						font-size: 14px;
+						font-weight: bold;
+					}
+
+				}
+
+				.total-panel{
+					width: 19%;
+					height: 200px;
+
+					p{
+						text-align: center;
+						font-size: 16px;
+						font-weight: bold;
+					}
+
+				}
+
+			}
+		}
+
+	}
+
+
+
+}
