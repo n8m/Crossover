@@ -87,9 +87,10 @@
 
 				.info-panel{
 					width: 19%;
-					border: 2px solid black;
+					border: 2px solid green;
 					height: 200px;
 					cursor: pointer;
+					box-shadow: 5px 5px 5px #888888;
 
 					p{
 						font-size: 14px;
